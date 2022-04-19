@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="FieldsClient2">
+    <output-path>$PROJECT_DIR$/out/artifacts/FieldsClient2</output-path>
+    <root id="root">
+      <element id="archive" name="FieldsClient.jar">
+        <element id="module-output" name="FieldsClient" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.DashBoard">
+   <children>
+      <VBox prefHeight="1080.0" prefWidth="1920.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <AnchorPane VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="1586.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="main_table" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#changeInFocus" prefHeight="260.0" prefWidth="793.0">
+                          <columns>
+                            <TableColumn prefWidth="28.0" />
+                            <TableColumn fx:id="main_table_name" prefWidth="125.0" text="Name" />
+                              <TableColumn fx:id="main_table_health" prefWidth="46.0" text="Health" />
+                              <TableColumn fx:id="main_table_service" prefWidth="62.0" text="Service" />
+                              <TableColumn fx:id="main_table_address" prefWidth="140.0" text="Address" />
+                              <TableColumn fx:id="main_table_peers" prefWidth="59.0" text="Peers" />
+                              <TableColumn fx:id="main_table_height" prefWidth="82.0" text="Height" />
+                              <TableColumn fx:id="main_table_sp" prefWidth="36.0" text="SP" />
+                              <TableColumn fx:id="main_table_filter" prefWidth="56.0" text="Filter" />
+                              <TableColumn fx:id="main_table_plots" prefWidth="86.0" text="Plots" />
+                              <TableColumn fx:id="main_table_proofs" prefWidth="72.0" text="Proofs" />
+                          </columns>
+                        </TableView>
+                        <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="793.0">
+                           <children>
+                              <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" prefHeight="262.0" prefWidth="235.0" text="Overview" textAlignment="CENTER" HBox.hgrow="SOMETIMES">
+                                <content>
+                                  <AnchorPane prefHeight="236.0" prefWidth="300.0">
+                                       <children>
+                                          <HBox layoutX="9.600000381469727" layoutY="9.600000381469727" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <VBox prefHeight="211.0" prefWidth="70.0" spacing="10.0" HBox.hgrow="SOMETIMES">
+                                                   <children>
+                                                      <Label text="Health">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Height">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Weight">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Netspace">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Difficulty">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Epoch">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" />
+                                                   </padding>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="10.0" prefHeight="216.0" prefWidth="80.0" HBox.hgrow="SOMETIMES">
+                                                   <children>
+                                                      <TextField fx:id="dash_overview_health" editable="false" />
+                                                      <TextField fx:id="dash_overview_height" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="5.0" prefHeight="0.0" prefWidth="74.0">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_overview_weight" editable="false" layoutX="10.0" layoutY="45.0">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_overview_netspace" editable="false" layoutX="10.0" layoutY="80.0">
+                                                         <VBox.margin>
+                                                            <Insets top="6.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_overview_difficulty" editable="false" layoutX="10.0" layoutY="115.0">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_overview_epoch_date" editable="false" layoutX="10.0" layoutY="130.0">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_overview_epoch_time" editable="false" layoutX="10.0" layoutY="158.0">
+                                                         <VBox.margin>
+                                                            <Insets top="6.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" />
+                                                   </padding>
+                                                   <HBox.margin>
+                                                      <Insets right="-6.0" />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                                 <HBox.margin>
+                                    <Insets right="4.0" />
+                                 </HBox.margin>
+                              </TitledPane>
+                              <TitledPane alignment="CENTER" animated="false" collapsible="false" prefHeight="258.0" prefWidth="243.0" text="Node" HBox.hgrow="SOMETIMES">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="230.0" prefWidth="206.0">
+                                       <children>
+                                          <HBox layoutY="-66.0" prefHeight="263.0" prefWidth="242.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <VBox prefHeight="213.0" prefWidth="131.0" spacing="10.0">
+                                                   <children>
+                                                      <Label text="Sync">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="SP">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="MemPool">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Filter Last">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label prefHeight="20.0" prefWidth="85.0" text="Filter Max">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Filter Avg">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="SP Var">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                                <VBox prefHeight="214.0" prefWidth="126.0">
+                                                   <children>
+                                                      <TextField fx:id="dash_node_sync" editable="false" />
+                                                      <TextField fx:id="dash_node_sp_index" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="5.0" prefHeight="0.0" prefWidth="74.0">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_node_mempool" editable="false" layoutX="10.0" layoutY="45.0">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_node_filter_last" editable="false" layoutX="10.0" layoutY="80.0">
+                                                         <VBox.margin>
+                                                            <Insets top="4.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_node_filter_max" editable="false" layoutX="10.0" layoutY="115.0">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_node_filter_avg" editable="false" layoutX="10.0" layoutY="130.0">
+                                                         <VBox.margin>
+                                                            <Insets top="6.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_node_sp_var" editable="false" layoutX="10.0" layoutY="158.0">
+                                                         <VBox.margin>
+                                                            <Insets top="5.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" />
+                                                   </padding>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </VBox>
+                                                <VBox layoutX="94.0" layoutY="10.0" prefHeight="215.0" prefWidth="102.0" spacing="10.0">
+                                                   <children>
+                                                      <TextField fx:id="dash_node_filter_last_pct" prefHeight="25.0" prefWidth="60.0">
+                                                         <VBox.margin>
+                                                            <Insets left="4.0" right="-6.0" top="89.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="dash_node_sp_var_pct" layoutX="14.0" layoutY="100.0" prefHeight="25.0" prefWidth="60.0">
+                                                         <VBox.margin>
+                                                            <Insets left="4.0" right="-6.0" top="56.0" />
+                                                         </VBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                                 <HBox.margin>
+                                    <Insets right="4.0" />
+                                 </HBox.margin>
+                              </TitledPane>
+                              <TitledPane alignment="CENTER" animated="false" collapsible="false" layoutX="284.0" layoutY="10.0" prefHeight="258.0" prefWidth="206.0" text="Pool" HBox.hgrow="SOMETIMES">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="324.0" prefWidth="320.0">
+                                       <children>
+                                          <HBox layoutY="-43.0" prefHeight="263.0" prefWidth="207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <VBox prefHeight="211.0" prefWidth="133.0" spacing="10.0">
+                                                   <children>
+                                                      <Label text="Points">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="   Curr.">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="   Found 24H">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="   Credit 24H">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Difficulty">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="20.0" top="10.0" />
+                                                   </padding>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <VBox layoutX="96.0" layoutY="10.0" prefHeight="215.0" prefWidth="67.0">
+                                             <children>
+                                                <TextField fx:id="dash_pool_points_curr" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="5.0" prefHeight="0.0" prefWidth="74.0">
+                                                   <VBox.margin>
+                                                      <Insets top="38.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="dash_pool_points_24h" editable="false" layoutX="10.0" layoutY="45.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="dash_pool_credit_24h" editable="false" layoutX="10.0" layoutY="80.0">
+                                                   <VBox.margin>
+                                                      <Insets top="4.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="dash_pool_difficulty" editable="false" layoutX="10.0" layoutY="115.0">
+                                                   <VBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <HBox.margin>
+                                    <Insets right="4.0" />
+                                 </HBox.margin>
+                              </TitledPane>
+                              <TitledPane alignment="CENTER" animated="false" collapsible="false" layoutX="558.0" layoutY="10.0" prefHeight="258.0" prefWidth="207.0" text="Wallet" HBox.hgrow="SOMETIMES">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="230.0" prefWidth="182.0">
+                                       <children>
+                                          <HBox layoutY="-63.0" prefHeight="263.0" prefWidth="195.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <VBox prefHeight="211.0" prefWidth="84.0" spacing="10.0">
+                                                   <children>
+                                                      <Label text="Hot">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="   Balence">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <padding>
+                                                            <Insets bottom="4.0" />
+                                                         </padding>
+                                                         <VBox.margin>
+                                                            <Insets top="-6.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label text="Cold">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="   Balance">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets top="-6.0" />
+                                                         </VBox.margin>
+                                                         <padding>
+                                                            <Insets bottom="4.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <Label text="   Balance ">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets top="-6.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                      <Label text="Pool ">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="   Balance">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                         <VBox.margin>
+                                                            <Insets top="-6.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="10.0" top="10.0" />
+                                                   </padding>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <VBox layoutX="85.0" layoutY="10.0" prefHeight="215.0" prefWidth="79.0">
+                                             <children>
+                                                <TextField fx:id="dash_wallet_hot" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="5.0" prefHeight="0.0" prefWidth="74.0">
+                                                   <VBox.margin>
+                                                      <Insets top="32.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="dash_wallet_cold" editable="false" layoutX="10.0" layoutY="80.0">
+                                                   <VBox.margin>
+                                                      <Insets top="32.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="dash_wallet_cold2" editable="false" layoutX="10.0" layoutY="115.0">
+                                                   <VBox.margin>
+                                                      <Insets top="4.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="dash_wallet_pool" editable="false" layoutX="10.0" layoutY="158.0">
+                                                   <VBox.margin>
+                                                      <Insets top="28.0" />
+                                                   </VBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane alignment="CENTER" animated="false" collapsible="false" layoutX="802.0" layoutY="10.0" prefHeight="106.0" prefWidth="51.0">
+                                 <content>
+                                    <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="50.0">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" layoutX="6.0" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="#" />
+                                                <Button mnemonicParsing="false" text="*" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <Separator prefHeight="0.0" prefWidth="1910.0" scaleY="5.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="-2.0" />
+               </padding>
+            </Separator>
+            <HBox prefHeight="756.0" prefWidth="1910.0">
+               <children>
+                  <TabPane prefHeight="750.0" prefWidth="956.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Farm Info">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="956.0">
+                                 <children>
+                                    <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="721.0" prefWidth="953.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <VBox prefHeight="721.0" prefWidth="476.5">
+                                             <children>
+                                                <ListView fx:id="farm_activity" prefHeight="99.0" prefWidth="397.0" />
+                                                <TitledPane alignment="CENTER" animated="false" collapsible="false" prefHeight="358.0" prefWidth="397.0" text="Farmer">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="475.0">
+                                                         <children>
+                                                            <GridPane layoutX="104.0" layoutY="44.0" prefHeight="201.0" prefWidth="475.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                              <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="194.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="263.0" minWidth="10.0" prefWidth="262.0" />
+                                                              </columnConstraints>
+                                                              <rowConstraints>
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                              </rowConstraints>
+                                                               <children>
+                                                                  <HBox prefHeight="100.0" prefWidth="200.0">
+                                                                     <children>
+                                                                        <VBox prefHeight="244.0" prefWidth="110.0" spacing="9.0">
+                                                                           <children>
+                                                                              <Label layoutX="20.0" layoutY="20.0" text="Status">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="40.0" text="Health">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="50.0" text="Proofs">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label text="Mempool">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="40.0" text="Filter Avg.">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="100.0" text="Filter Max">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="60.0" text="   &gt; 5s">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="60.0" text="   &gt; 10s">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="120.0" text="   &gt; 15s">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="220.0" text="   &gt; 20s">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="200.0" text="   Missed">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                                 <padding>
+                                                                                    <Insets bottom="-10.0" />
+                                                                                 </padding>
+                                                                              </Label>
+                                                                           </children>
+                                                                           <opaqueInsets>
+                                                                              <Insets />
+                                                                           </opaqueInsets>
+                                                                           <HBox.margin>
+                                                                              <Insets top="2.0" />
+                                                                           </HBox.margin>
+                                                                        </VBox>
+                                                                        <VBox prefHeight="244.0" prefWidth="0.0">
+                                                                           <children>
+                                                                              <Separator orientation="VERTICAL" prefHeight="328.0" prefWidth="10.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="6.0" />
+                                                                                 </VBox.margin>
+                                                                              </Separator>
+                                                                           </children>
+                                                                        </VBox>
+                                                                        <VBox prefWidth="120.0">
+                                                                           <children>
+                                                                              <TextField fx:id="farm_status" editable="false">
+                                                                                 <VBox.margin>
+                                                                                    <Insets />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_health" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="5.0" prefHeight="0.0" prefWidth="74.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_proofs" editable="false" layoutX="10.0" layoutY="45.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_mempool" editable="false" layoutX="10.0" layoutY="80.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_filter_avg" editable="false" layoutX="10.0" layoutY="115.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_filter_max" editable="false" layoutX="10.0" layoutY="130.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_filter_5" editable="false" layoutX="10.0" layoutY="158.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_filter_10" editable="false" layoutX="10.0" layoutY="189.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_filter_15" editable="false" layoutX="10.0" layoutY="214.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_filter_20" editable="false" layoutX="10.0" layoutY="239.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_filter_missed" editable="false" layoutX="10.0" layoutY="264.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                           <HBox.margin>
+                                                                              <Insets right="4.0" />
+                                                                           </HBox.margin>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                                                     <children>
+                                                                        <VBox prefHeight="244.0" prefWidth="2.0">
+                                                                           <children>
+                                                                              <Separator orientation="VERTICAL" prefHeight="336.0" prefWidth="6.0" scaleX="2.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets />
+                                                                                 </VBox.margin>
+                                                                              </Separator>
+                                                                           </children>
+                                                                        </VBox>
+                                                                        <VBox prefHeight="313.0" prefWidth="94.0" spacing="9.0">
+                                                                           <children>
+                                                                              <Label layoutX="20.0" layoutY="20.0" text="Sp">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="40.0" text="   Re-Orders">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="60.0" text="   Delays">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="120.0" text="SP Var.">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="170.0" text="   10Min">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="200.0" text="   1Hr">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="230.0" text="   4Hr">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="260.0" text="   12Hr">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="280.0" text="Cached 1Hr">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="250.0" text="Cached 4Hr">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                              <Label layoutX="20.0" layoutY="280.0" text="Cached 12Hr">
+                                                                                 <font>
+                                                                                    <Font size="14.0" />
+                                                                                 </font>
+                                                                              </Label>
+                                                                           </children>
+                                                                           <opaqueInsets>
+                                                                              <Insets />
+                                                                           </opaqueInsets>
+                                                                           <HBox.margin>
+                                                                              <Insets top="2.0" />
+                                                                           </HBox.margin>
+                                                                        </VBox>
+                                                                        <VBox layoutX="10.0" layoutY="10.0" prefHeight="244.0" prefWidth="2.0">
+                                                                           <children>
+                                                                              <Separator orientation="VERTICAL" prefHeight="347.0" prefWidth="7.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="-2.0" />
+                                                                                 </VBox.margin>
+                                                                              </Separator>
+                                                                           </children>
+                                                                        </VBox>
+                                                                        <VBox prefHeight="320.0" prefWidth="70.0">
+                                                                           <children>
+                                                                              <TextField fx:id="farm_sp_index" editable="false">
+                                                                                 <VBox.margin>
+                                                                                    <Insets />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_sp_reorders" editable="false" layoutX="10.0" layoutY="10.0" maxHeight="5.0" prefHeight="0.0" prefWidth="74.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_sp_delayed" editable="false" layoutX="10.0" layoutY="45.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_sp_var" editable="false" layoutX="10.0" layoutY="80.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_sp_10m" editable="false" layoutX="10.0" layoutY="115.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_sp_1h" editable="false" layoutX="10.0" layoutY="130.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_sp_4h" editable="false" layoutX="10.0" layoutY="158.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_sp_12h" editable="false" layoutX="10.0" layoutY="189.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_cached_1h" editable="false" layoutX="10.0" layoutY="214.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_cached_4h" editable="false" layoutX="10.0" layoutY="239.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_cached_12h" editable="false" layoutX="10.0" layoutY="264.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                        </VBox>
+                                                                        <VBox layoutX="134.0" layoutY="10.0" prefHeight="244.0" prefWidth="2.0">
+                                                                           <children>
+                                                                              <Separator orientation="VERTICAL" prefHeight="326.0" prefWidth="11.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets left="2.0" />
+                                                                                 </VBox.margin>
+                                                                              </Separator>
+                                                                           </children>
+                                                                        </VBox>
+                                                                        <VBox layoutX="119.0" layoutY="10.0" prefHeight="315.0" prefWidth="70.0">
+                                                                           <children>
+                                                                              <TextField fx:id="farm_sp_10m_pct" editable="false" layoutX="10.0" layoutY="115.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_sp_1h_pct" editable="false" layoutX="10.0" layoutY="130.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_sp_4h_pct" editable="false" layoutX="10.0" layoutY="158.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_sp_12h_pct" editable="false" layoutX="10.0" layoutY="189.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_cached_1h_pct" editable="false" layoutX="10.0" layoutY="214.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_cached_4h_pct" editable="false" layoutX="10.0" layoutY="239.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                              <TextField fx:id="farm_cached_12h_pct" editable="false" layoutX="10.0" layoutY="264.0">
+                                                                                 <VBox.margin>
+                                                                                    <Insets top="4.0" />
+                                                                                 </VBox.margin>
+                                                                              </TextField>
+                                                                           </children>
+                                                                           <HBox.margin>
+                                                                              <Insets right="-4.0" top="112.0" />
+                                                                           </HBox.margin>
+                                                                        </VBox>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </GridPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </content>
+                                                </TitledPane>
+                                                <TitledPane alignment="CENTER" animated="false" collapsible="false" prefHeight="123.0" prefWidth="397.0" text="Network">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="59.0" prefWidth="475.0">
+                                                         <children>
+                                                            <HBox layoutX="64.0" layoutY="-36.0" prefHeight="82.0" prefWidth="475.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <VBox prefHeight="78.0" prefWidth="73.0" spacing="9.0">
+                                                                     <children>
+                                                                        <Label text="Height">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label layoutX="20.0" layoutY="10.0" text="Weight">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label layoutX="20.0" layoutY="40.0" text="Difficulty">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <Separator orientation="VERTICAL" prefHeight="283.0" prefWidth="7.0">
+                                                                     <HBox.margin>
+                                                                        <Insets right="15.0" />
+                                                                     </HBox.margin></Separator>
+                                                                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="83.0" prefWidth="89.0">
+                                                                     <children>
+                                                                        <TextField fx:id="network_height" />
+                                                                        <TextField fx:id="network_weight">
+                                                                           <VBox.margin>
+                                                                              <Insets top="4.0" />
+                                                                           </VBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="network_difficulty" layoutX="10.0" layoutY="45.0">
+                                                                           <VBox.margin>
+                                                                              <Insets top="4.0" />
+                                                                           </VBox.margin>
+                                                                        </TextField>
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="77.0" prefWidth="78.0" spacing="10.0">
+                                                                     <children>
+                                                                        <Label text="Netspace">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label layoutX="20.0" layoutY="10.0" text="Epoch">
+                                                                           <font>
+                                                                              <Font size="14.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                     </children>
+                                                                     <padding>
+                                                                        <Insets left="10.0" />
+                                                                     </padding>
+                                                                  </VBox>
+                                                                  <Separator layoutX="104.0" layoutY="10.0" orientation="VERTICAL" prefHeight="283.0" prefWidth="7.0">
+                                                                     <HBox.margin>
+                                                                        <Insets right="10.0" />
+                                                                     </HBox.margin></Separator>
+                                                                  <VBox prefHeight="83.0" prefWidth="102.0">
+                                                                     <children>
+                                                                        <TextField fx:id="network_netspace" />
+                                                                        <TextField fx:id="network_epoch_date">
+                                                                           <VBox.margin>
+                                                                              <Insets top="4.0" />
+                                                                           </VBox.margin>
+                                                                        </TextField>
+                                                                        <TextField fx:id="network_epoch_time" layoutX="10.0" layoutY="45.0">
+                                                                           <VBox.margin>
+                                                                              <Insets top="4.0" />
+                                                                           </VBox.margin>
+                                                                        </TextField>
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                  </content>
+                                                </TitledPane>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" prefHeight="721.0" prefWidth="476.5">
+                                             <children>
+                                                <Label alignment="CENTER" prefWidth="496.0" text="Node Warnings" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <ListView fx:id="farm_node_warnings" prefHeight="200.0" prefWidth="200.0" />
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="496.0" text="SP Warnings" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <AnchorPane>
+                                                   <children>
+                                                      <VBox />
+                                                   </children>
+                                                </AnchorPane>
+                                                <ListView fx:id="farm_sp_warnings" editable="true" prefHeight="200.0" prefWidth="200.0" />
+                                                <Label alignment="CENTER" layoutX="10.0" layoutY="215.0" prefWidth="496.0" text="Filter Pass Warnings" textAlignment="CENTER">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <ListView fx:id="farm_fp_warnings" prefHeight="200.0" prefWidth="200.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Pool Info">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="956.0">
+                                 <children>
+                                    <HBox prefHeight="721.0" prefWidth="953.0">
+                                       <children>
+                                          <VBox prefHeight="721.0" prefWidth="476.5" />
+                                          <VBox layoutX="10.0" layoutY="10.0" prefHeight="721.0" prefWidth="476.5" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                      <Tab text="Harvesters">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="956.0">
+                                 <children>
+                                    <HBox prefHeight="721.0" prefWidth="953.0" spacing="4.0">
+                                       <children>
+                                          <VBox prefHeight="721.0" prefWidth="476.5">
+                                             <children>
+                                                <TableView fx:id="harevester_table" prefHeight="360.0" prefWidth="415.0">
+                                                  <columns>
+                                                    <TableColumn prefWidth="218.0" text="Address" />
+                                                    <TableColumn prefWidth="133.0" text="Plots" />
+                                                      <TableColumn prefWidth="125.0" text="Plots Failed Open" />
+                                                  </columns>
+                                                </TableView>
+                                             </children>
+                                          </VBox>
+                                          <VBox layoutX="10.0" layoutY="10.0" prefHeight="721.0" prefWidth="476.5">
+                                             <children>
+                                                <TextArea fx:id="harvester_log" prefHeight="360.0" prefWidth="477.0" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Charts">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox prefHeight="721.0" prefWidth="953.0" spacing="5.0">
+                                       <children>
+                                          <VBox prefHeight="721.0" prefWidth="476.5" spacing="4.0">
+                                             <children>
+                                                <TitledPane animated="false" collapsible="false" prefHeight="342.0" text="untitled">
+                                                  <content>
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="355.0" prefWidth="0.0" />
+                                                  </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="10.0" minHeight="55.0" prefHeight="342.0" text="untitled">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="355.0" prefWidth="475.0" />
+                                                   </content>
+                                                </TitledPane>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox prefHeight="721.0" prefWidth="476.5" spacing="5.0">
+                                             <children>
+                                                <TitledPane animated="false" collapsible="false" prefHeight="342.0" text="untitled">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="355.0" prefWidth="0.0">
+                                                         <children>
+                                                            <BarChart layoutX="0.5999999999999996" layoutY="19.6" prefHeight="318.0" prefWidth="469.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="-10.0">
+                                                              <xAxis>
+                                                                <CategoryAxis side="BOTTOM" />
+                                                              </xAxis>
+                                                              <yAxis>
+                                                                <NumberAxis side="LEFT" />
+                                                              </yAxis>
+                                                            </BarChart>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="10.0" minHeight="55.0" prefHeight="342.0" prefWidth="474.0" text="untitled">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="325.0" prefWidth="472.0" />
+                                                   </content>
+                                                </TitledPane>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TabPane>
+                  <TabPane prefHeight="750.0" prefWidth="956.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab text="Connections">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox layoutX="139.0" layoutY="197.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="721.0" prefWidth="953.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox prefHeight="435.0" prefWidth="953.0">
+                                             <children>
+                                                <TableView fx:id="con_table" onMouseClicked="#con_selected_node" prefHeight="410.0" prefWidth="651.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="con_height" prefWidth="94.0" sortable="false" text="Height" />
+                                                      <TableColumn fx:id="con_node_id" prefWidth="144.0" sortable="false" text="Node ID" />
+                                                      <TableColumn fx:id="con_address" prefWidth="110.0" sortable="false" text="Address" />
+                                                      <TableColumn fx:id="con_port" prefWidth="62.0" sortable="false" text="Port" />
+                                                      <TableColumn fx:id="con_read" prefWidth="78.0" sortable="false" text="Read MB" />
+                                                      <TableColumn fx:id="con_write" prefWidth="82.0" sortable="false" text="Write MB" />
+                                                   </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                                <ListView fx:id="con_watcher_activity" prefHeight="200.0" prefWidth="304.0" />
+                                             </children>
+                                          </HBox>
+                                          <VBox>
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <HBox prefHeight="32.0" prefWidth="795.0" spacing="10.0">
+                                                   <children>
+                                                      <RadioButton contentDisplay="CENTER" mnemonicParsing="false" text="Enable Peer Watcher">
+                                                         <padding>
+                                                            <Insets left="20.0" top="4.0" />
+                                                         </padding>
+                                                      </RadioButton>
+                                                      <TextField fx:id="con_addr_box" prefHeight="25.0" prefWidth="229.0">
+                                                         <HBox.margin>
+                                                            <Insets left="10.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Button fx:id="add_peer" mnemonicParsing="false" onAction="#addPeer" text="Add Peer" />
+                                                      <Button fx:id="remove_peer" layoutX="213.0" layoutY="10.0" mnemonicParsing="false" onAction="#removePeer" text="Remove Peer" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="149.0" prefWidth="795.0">
+                                                   <children>
+                                                      <Label text="Node ID: ">
+                                                         <HBox.margin>
+                                                            <Insets left="80.0" top="12.0" />
+                                                         </HBox.margin>
+                                                         <padding>
+                                                            <Insets left="20.0" />
+                                                         </padding>
+                                                      </Label>
+                                                      <TextField fx:id="con_addr_box_id" prefHeight="25.0" prefWidth="556.0">
+                                                         <HBox.margin>
+                                                            <Insets left="20.0" top="4.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab disable="true" text="RPC Dashboard">
+                           <content>
+                              <AnchorPane prefHeight="537.0" prefWidth="795.0">
+                                 <children>
+                                    <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <children>
+                                          <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="589.0" prefWidth="796.0">
+                                             <children>
+                                                <HBox prefHeight="341.0" prefWidth="796.0">
+                                                   <children>
+                                                      <TextArea prefHeight="389.0" prefWidth="771.0" />
+                                                      <VBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="70.0" spacing="10.0">
+                                                         <children>
+                                                            <RadioButton contentDisplay="BOTTOM" mnemonicParsing="false" selected="true" text="Format" textOverrun="CLIP" wrapText="true">
+                                                               <VBox.margin>
+                                                                  <Insets bottom="10.0" top="10.0" />
+                                                               </VBox.margin>
+                                                            </RadioButton>
+                                                            <Button alignment="CENTER" mnemonicParsing="false" text="Copy" />
+                                                            <Button alignment="CENTER" layoutX="19.0" layoutY="47.0" mnemonicParsing="false" text="Save" />
+                                                            <Button alignment="CENTER" layoutX="20.0" layoutY="82.0" mnemonicParsing="false" text="Clear" />
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets right="4.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <AnchorPane />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab disable="true" text="Wallet">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <HBox layoutX="148.0" layoutY="155.0" prefHeight="721.0" prefWidth="953.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <VBox prefHeight="721.0" prefWidth="476.5" />
+                                          <VBox layoutX="10.0" layoutY="10.0" prefHeight="721.0" prefWidth="476.5" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

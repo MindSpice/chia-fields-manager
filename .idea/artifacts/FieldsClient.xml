@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jlink" build-on-make="true" name="FieldsClient">
+    <output-path>$PROJECT_DIR$/out/artifacts/FieldsClient</output-path>
+    <root id="root" />
+  </artifact>
+</component>
